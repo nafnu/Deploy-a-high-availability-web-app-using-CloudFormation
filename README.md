@@ -10,7 +10,8 @@ There will be two parts to this project:
 1. Diagram: To visualize and understand the CloudFormation script.
 
 
-![udagram-infrastructure-diagram](https://github.com/nafnu/Deploy-a-high-availability-web-app-using-CloudFormation/assets/65398774/e8f2a0d4-2ccf-45e8-b09f-b1a54f82179c)
+![udagram-infrastructure-diagram](https://github.com/nafnu/Deploy-a-high-availability-web-app-using-CloudFormation/assets/65398774/f3565662-b45b-4ea7-b9ce-4114433485bb)
+
 
 
 2. Scripts: Templates and parameters. Will be added documents in folders to interpret the instructions and create a matching CloudFormation scrip. 
