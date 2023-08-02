@@ -1,0 +1,14 @@
+[
+    {
+      "ParameterKey": "EnvironmentName",
+      "ParameterValue": "UdagramWebApp"
+    },
+    {
+      "ParameterKey": "VocareumKey2",
+      "ParameterValue": "ami-047a51fa27710816e"
+    },
+    {
+      "ParameterKey": "InstanceType",
+      "ParameterValue": "t3.medium"
+    }
+  ]
