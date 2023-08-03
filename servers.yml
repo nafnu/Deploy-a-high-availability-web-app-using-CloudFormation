@@ -36,10 +36,10 @@ Resources:
         FromPort: 80
         ToPort: 80
         CidrIp: 0.0.0.0/0
-      - IpProtocol: tcp
-        FromPort: 22
-        ToPort: 22
-        CidrIp: 0.0.0.0/0
+      ##T- IpProtocol: tcp##T
+        ##TFromPort: 22##
+        ##ToPort: 22##
+        ##TCidrIp: 0.0.0.0/0##
       SecurityGroupEgress:
       - IpProtocol: tcp
         FromPort: 0
@@ -57,7 +57,7 @@ Resources:
           cd /var/www/html          
           aws s3 cp s3://my2564085       
       ImageId: ami-047a51fa27710816e
-      KeyName: VocareumKey2
+      ## Deleted Key name ##
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
@@ -163,3 +163,12 @@ Resources:
       Path: "/"
       Roles: 
         - Ref: "RootRole"
+
+## DNS as the output##
+
+Outputs:
+ WebAppLoadBalancerDNSName:
+        Description: DNS name or Public URL of the Load Balancer
+        Value: !Join [ "", [ 'http://', !GetAtt WebAppLB.DNSName ]]
+        Export:
+            Name: !Sub ${EnvironmentName}-LB-DNSName
