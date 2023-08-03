@@ -36,10 +36,10 @@ Resources:
         FromPort: 80
         ToPort: 80
         CidrIp: 0.0.0.0/0
-      ##T- IpProtocol: tcp##T
-        ##TFromPort: 22##
-        ##ToPort: 22##
-        ##TCidrIp: 0.0.0.0/0##
+      - IpProtocol: tcp
+        TFromPort: 22
+        ##ToPort: 22 Deleted SSH Port##
+        TCidrIp: 0.0.0.0/0
       SecurityGroupEgress:
       - IpProtocol: tcp
         FromPort: 0
