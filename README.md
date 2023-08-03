@@ -16,13 +16,13 @@ To visualize and understand the CloudFormation script.
 
 ##### 2.Scripts: 
 Templates and parameters. Will be added documents in folders to interpret the instructions and scripts. The files included are: 
- `create.sh:` cloudformation create stack script.
- `update.sh:` cloudformation update stack script.
- `delete.sh:` cloudformation delete stack script.
- `network.yml:` parameters file for network cloudformation stack.
- `network-parameters.json:` cloudformation parameters file for creating networking resources for this project.
- `servers.yml:` parameters file for server cloudformation stack. Also, include the role
- `servers-parameters.json:` cloudformation parameters file for create a server for this project.
+ - `create.sh:` cloudformation create stack script.
+ - `update.sh:` cloudformation update stack script.
+ - `delete.sh:` cloudformation delete stack script.
+ - `network.yml:` parameters file for network cloudformation stack.
+ - `network-parameters.json:` cloudformation parameters file for creating networking resources for this project.
+ - `servers.yml:` parameters file for server cloudformation stack. Also, include the role
+ - `servers-parameters.json:` cloudformation parameters file for create a server for this project.
 
 ### How to run the supporting material?
 You can run the supporting material in two easy steps:
