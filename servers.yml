@@ -6,7 +6,7 @@ Parameters:
     EnvironmentName:
         Description: An environment name that will be prefixed to resource names
         Type: String
-    ServerAMIId:
+    VocareumKey2:
         Description: AMI ID for EC2 instances.
         Type: String
     InstanceType:
@@ -138,3 +138,46 @@ Resources:
       VpcId: 
         Fn::ImportValue:
           Fn::Sub: "${EnvironmentName}-VPCID"
+
+  ProfileWithRolesForOurApp:
+    Type: AWS::IAM::InstanceProfile
+    Properties: 
+      Roles:
+      - UdacityS3ReadOnlyEC2
+  
+  UdacityS3ReadOnlyEC2:
+    Type: AWS::IAM::Role
+    Properties:
+    RoleName: 
+      !Sub ${EnvironmentName}-Role
+    AssumeRolePolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        -   Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+    Path: "/"
+
+  RolePolicies:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: AmazonS3ReadOnlyAccess
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - 
+          Effect: Allow
+          Action: 
+          -   s3:Get*
+          -   s3:List*
+          Resource: 
+          -   arn:aws:s3:::udacity-demo-1
+          -   arn:aws:s3:::udacity-demo-1/*
+      Roles:
+      -   Ref: UdacityS3ReadOnlyEC2
+
+    
+  
